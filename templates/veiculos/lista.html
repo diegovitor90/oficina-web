@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Veículos</title>
+</head>
+<body>
+    <h1>Veículos</h1>
+    <ul>
+        {% for veiculo in veiculos %}
+            <li>{{ veiculo.placa }} - {{ veiculo.modelo }}</li>
+        {% empty %}
+            <li>Nenhum veículo encontrado.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

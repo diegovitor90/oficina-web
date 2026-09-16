@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do veículo</title>
+</head>
+<body>
+    <h1>{{ veiculo.placa }} - {{ veiculo.modelo }}</h1>
+    <p>Marca: {{ veiculo.marca }}</p>
+    <p>Cliente: {{ veiculo.cliente }}</p>
+    <p>Status: {% if veiculo.ativo %}Ativo{% else %}Desativado{% endif %}</p>
+
+    {% if veiculo.ativo %}
+        <form method="post" action="{% url 'veiculos:desativar' veiculo.pk %}">
+            {% csrf_token %}
+            <button type="submit">Desativar</button>
+        </form>
+    {% endif %}
+</body>
+</html>

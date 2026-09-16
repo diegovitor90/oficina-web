@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Clientes</h1>
+
+    <form method="get">
+        <input type="text" name="q" value="{{ termo }}" placeholder="Buscar cliente">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <ul>
+        {% for cliente in clientes %}
+            <li>{{ cliente.nome_completo }}</li>
+        {% empty %}
+            <li>Nenhum cliente encontrado.</li>
+        {% endfor %}
+    </ul>
+
+    {% if clientes.has_previous or clientes.has_next %}
+        <div>
+            {% if clientes.has_previous %}
+                <a href="?page={{ clientes.previous_page_number }}">Anterior</a>
+            {% endif %}
+            {% if clientes.has_next %}
+                <a href="?page={{ clientes.next_page_number }}">Próxima</a>
+            {% endif %}
+        </div>
+    {% endif %}
+</body>
+</html>

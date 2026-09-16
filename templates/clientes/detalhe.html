@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do cliente</title>
+</head>
+<body>
+    <h1>{{ cliente.nome_completo }}</h1>
+    <p>CPF/CNPJ: {{ cliente.cpf_cnpj }}</p>
+    <p>Telefone: {{ cliente.telefone }}</p>
+    <p>E-mail: {{ cliente.email }}</p>
+    <p>Status: {% if cliente.ativo %}Ativo{% else %}Desativado{% endif %}</p>
+
+    {% if cliente.ativo %}
+        <form method="post" action="{% url 'clientes:desativar' cliente.pk %}">
+            {% csrf_token %}
+            <button type="submit">Desativar</button>
+        </form>
+    {% endif %}
+</body>
+</html>

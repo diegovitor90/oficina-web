@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mecânicos</title>
+</head>
+<body>
+    <h1>Mecânicos</h1>
+
+    <ul>
+        {% for mecanico in mecanicos %}
+            <li>{{ mecanico.nome }} - {{ mecanico.especialidade }}</li>
+        {% empty %}
+            <li>Nenhum mecânico encontrado.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
