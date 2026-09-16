@@ -1,0 +1,24 @@
+body,
+button,
+input,
+select,
+textarea {
+    font-size: 20px !important;
+}
+
+.main-sidebar .nav-link,
+.main-sidebar .brand-text,
+.content-header h1,
+.card-header,
+.card-body,
+.table,
+.form-group label,
+.btn,
+.breadcrumb,
+.pagination {
+    font-size: 20px !important;
+}
+
+.main-sidebar .nav-icon {
+    font-size: 20px !important;
+}

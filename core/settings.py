@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,6 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
 # Email
@@ -133,5 +135,33 @@ STATIC_URL = 'static/'
 MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+    },
+}
+
+JAZZMIN_SETTINGS = {
+    'site_title': 'Oficina Web',
+    'site_header': 'Oficina Web',
+    'site_brand': 'Oficina Mecânica',
+    'welcome_sign': 'Bem-vindo ao sistema da oficina',
+    'copyright': 'Oficina Web',
+    'search_model': [
+        'cliente.Cliente',
+        'veiculos.Veiculo',
+        'mecanicos.Mecanico',
+        'pecas.Peca',
+    ],
+    'show_sidebar': True,
+    'navigation_expanded': True,
+    'hide_apps': [],
+    'hide_models': [],
+    'custom_css': 'admin/css/custom.css',
+    'icons': {
+        'cliente.cliente': 'fas fa-users',
+        'veiculos.veiculo': 'fas fa-car',
+        'mecanicos.mecanico': 'fas fa-user-cog',
+        'pecas.peca': 'fas fa-cogs',
+        'servicos.servico': 'fas fa-tools',
+        'fornecedores.fornecedor': 'fas fa-truck',
+        'estoque.estoque': 'fas fa-boxes',
     },
 }
